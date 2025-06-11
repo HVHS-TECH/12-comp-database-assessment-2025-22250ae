@@ -61,27 +61,31 @@ function fb_write() {
         return;
     }
     var name = document.getElementById("name").value;
-    var favoriteFruit = document.getElementById("favoriteFruit").value;
-    var fruitQuantity = document.getElementById("fruitQuantity").value;
-    var Age = document.getElementById("Age").value;
-    var Dietaryrestrictions = document.getElementById("Dietaryrestrictions").value;
+    var age = document.getElementById("age").value;
+    var childhoodpetsname = document.getElementById("childhoodpetsname").value;
+    var mothersmaidenname = document.getElementById("mothersmaidenname").value;
+    var modelofyourfirstcar = document.getElementById("modelofyourfirstcar").value;
+    var whatcitywereyoubornin = document.getElementById("whatcitywereyoubornin").value;
+    var whatstreetdidyougrowupon = document.getElementById("whatstreetdidyougrowupon").value;
 
     var dbReference = ref(fb_gamedb, 'users/' + userId);
      set(dbReference, {
         Name: name,
-        FavoriteFruit: favoriteFruit,
-        FruitQuantity: fruitQuantity,
-        Age: Age,
-        Dietaryrestrictions: Dietaryrestrictions
+        Age: age,
+        Childhoodpetsname: childhoodpetsname,
+        Mothersmaidenname: mothersmaidenname,
+        Modelofyourfirstcar: modelofyourfirstcar,
+        Whatcitywereyoubornin: whatcitywereyoubornin,
+        Whatstreetdidyougrowupon: whatstreetdidyougrowupon
 
     }).then(() => {
         console.log("succesful write")
+        window.location.assign("gamechoose.html");
     }).catch((error) => {
         console.log("unsuccesful write")
         console.log(error);
     });
-    document.getElementById("response").innerHTML = "<h2>Hello! Thank you for taking interest in Sal's Strawberry Saloon©™®."+Age+" </h2>";
-}
+} 
     export { 
     fb_authenticate, fb_write
  };

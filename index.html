@@ -3,49 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sal’s Strawberry Saloon</title>
+  <title>Anthony</title>
   <link rel="stylesheet" href="style.css" />
   <script type="module" src="./main.mjs"></script>
 </head>
 <body>
-  <div class="container">
+ <div class="clearfix">
+  <div class="box" style="background-color:#bbb">
+  <p>Some text inside the box.</p>
+  </div>
+  <div class="box" style="background-color:#ccc">
     <h1>Anthony's Amazing Amusements</h1>
 
     <button onclick="fb_authenticate()">Login with Google</button>
 
-    <form id="fruitForm">
+    <form onsubmit="return false;">
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
+      <input type="text" id="name" name="name" value="ant" required />
 
-      <label for="favoriteFruit">Your Age</label>
-      <input type="text" id="Age" name="Age" required />
+      <label for="age">Your Age</label>
+      <input type="number" id="age" name="age" value="100" required />
 
-      <label for="Childhood Pets Name">Childhood Pets Name</label>
-      <input type="number" id="Childhood Pets Name" name="Childhood Pets Name" required />
+      <label for="childhoodpetsname">Childhood Pets Name</label>
+      <input type="text" id="childhoodpetsname" name="childhoodpetsname" value="ant" required />
 
-      <label for="Mothers Maiden Name">Mothers Maiden Name</label>
-      <input type="number" id="Mothers Maiden Name" name="Mothers Maiden Name" required />
+      <label for="mothersmaidenname">Mothers Maiden Name</label>
+      <input type="text" id="mothersmaidenname" name="mothersmaidenname" value="ant" required />
 
-      <label for="Model Of Your First Car">Model Of Your First Car</label>
-      <input type="text" id="Model Of Your First Car" name="Model Of Your First Car" required />
+      <label for="modelofyourfirstcar">Model Of Your First Car</label>
+      <input type="text" id="modelofyourfirstcar" name="modelofyourfirstcar" value="ant" required />
 
-      <label for="What City Were You Born In?Model Of Your First Car">What City Were You Born In?</label>
-      <input type="text" id="What City Were You Born In?" name="What City Were You Born In?" required />
+      <label for="whatcitywereyoubornin">What City Were You Born In?</label>
+      <input type="text" id="whatcitywereyoubornin" name="whatcitywereyoubornin" value="ant" required />
 
-      <label for="What Street Did You Grow Up On">What Street Did You Grow Up On</label>
-      <input type="text" id="What Street Did You Grow Up On" name="What Street Did You Grow Up On" required />
+      <label for="whatstreetdidyougrowupon">What Street Did You Grow Up On</label>
+      <input type="text" id="whatstreetdidyougrowupon" name="whatstreetdidyougrowupon" value="ant" required />
+      <button onclick="fb_write()">Submit and choose game</button>
 
-      <!-- add more fields here -->
-    </form>
-
-    <button onclick="fb_write()">Submit And Choose Game</button>
-
-
-  </br> 
-  <div id="response">
   </div>
-    <p id="statusMessage">Hello</p>
+  <div class="box" style="background-color:#ddd">
+  <p>Some text inside the box.</p>
   </div>
+</div>
 </body>
 </html>
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+ <form onsubmit="return false;">
+      <button onclick="window.location.assign('index.html')">Submit and choose game</button>
+      <input type="button" value="Load new document" button onclick="window.location.assign('https://www.w3schools.com')">
+ </form>
+
+
+<input type="button" value="old button" onclick="newDoc()">
+
+<script>
+function newDoc() {
+  window.location.assign("https://www.w3schools.com")
+}
+</script>
+</body>
