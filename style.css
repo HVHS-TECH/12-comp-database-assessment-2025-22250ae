@@ -1,30 +1,43 @@
 body {
-  background-color: #ff0000;
+  background-color: #000000;
   color: #000000;
   font-family: Arial, sans-serif;
-  padding: 2rem;
+  padding: 1rem;
 }
-
 .container {
-  max-width: 600px;
-  margin: auto;
-  background-color: #ff0000;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "form game1"
+    "form leaderboard";
+  grid-template-columns: 1.5fr 2.5fr;
+  gap: 5px;
+  background-color: #000000;
+  padding: 5px;
 }
-
-* {
-  box-sizing: border-box;
+.container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
 }
-
-.box {
-  
-  width: 33.33%;
+.container > div.header {
+  grid-area: header;
+  text-align: center;
+    border-radius: 12px;
+}
+.container > div.form {
+  grid-area: form;
+    border-radius: 12px;
   padding: 50px;
   margin: auto;
 }
-
+.container > div.game {
+  grid-area: game;
+    border-radius: 12px;
+}
+.container > div.leaderboard {
+  grid-area: leaderboard;
+    border-radius: 12px;
+}
 .clearfix::after {
   content: "";
   clear: both;
@@ -43,13 +56,8 @@ h2 {
   margin-top: 0.2rem;
 }
 
-label {
-  display: block;
-  margin-top: 1rem;
-}
-
 input {
-  width: 100%;
+  width: 95%;
   padding: 0.5rem;
   margin-top: 0.3rem;
   border: 1px solid #ccc;
@@ -68,9 +76,4 @@ button {
 
 button:hover {
   background-color: #ff0000;
-}
-
-#statusMessage {
-  margin-top: 1rem;
-  font-style: italic;
 }

@@ -1,12 +1,18 @@
+body {
+  background-color: #000000;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+}
 .container {
   display: grid;
   grid-template-areas:
     "header header"
     "form game1"
     "form game2";
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1.5fr 2.5fr;
   gap: 5px;
-  background-color: #2196F3;
+  background-color: #000000;
   padding: 5px;
 }
 .container > div {
@@ -16,15 +22,21 @@
 .container > div.header {
   grid-area: header;
   text-align: center;
+    border-radius: 12px;
 }
 .container > div.form {
   grid-area: form;
+    border-radius: 12px;
+  padding: 50px;
+  margin: auto;
 }
 .container > div.game1 {
   grid-area: game1;
+    border-radius: 12px;
 }
 .container > div.game2 {
   grid-area: game2;
+    border-radius: 12px;
 }
 .clearfix::after {
   content: "";
@@ -45,7 +57,7 @@ h2 {
 }
 
 input {
-  width: 100%;
+  width: 95%;
   padding: 0.5rem;
   margin-top: 0.3rem;
   border: 1px solid #ccc;

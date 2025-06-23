@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="test.css" />
   <script type="module" src="./main.mjs"></script>
 </head>
 <body>
- <div class="clearfix">
-  <div class="box" style="background-color:#ddd">
-  <p>Some text inside the box.</p>
+<div class="container">
+  <div class="header">
+    <h1>Anthonys Amazing Amusements</h1>
   </div>
-  <div class="box" style="background-color:#ccc">
-    <h1>Anthony's Amazing Amusements</h1>
-    <h2>Login to play games</h2>
+  <div class="form">
+    <h1>Login to play games</h1>
+
 
     <button onclick="fb_authenticate()">Login with Google</button>
 
@@ -40,12 +36,17 @@
       <label for="whatstreetdidyougrowupon">What Street Did You Grow Up On</label>
       <input type="text" id="whatstreetdidyougrowupon" name="whatstreetdidyougrowupon" value="ant" required />
       <button onclick="fb_write()">Submit and choose game</button>
-
+      <button onclick="fb_readsorted()">read</button>
   </div>
-  <div class="box" style="background-color:#ddd">
-  <p>Some text inside the box.</p>
+  <div class="game">
+    <button onclick="fb_game()">game</button>
+  </div>
+  <div class="leaderboard">
+<h1>Leaderboard</h1>
+<p id="demo"></p>
   </div>
 </div>
+
 </body>
 </html>
 
