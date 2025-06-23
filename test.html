@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="test.css" />
   <script type="module" src="./main.mjs"></script>
 </head>
 <body>
- <form onsubmit="return false;">
-      <button onclick="window.location.assign('index.html')">Submit and choose game</button>
-      <input type="button" value="Load new document" button onclick="window.location.assign('https://www.w3schools.com')">
- </form>
+<div class="container">
+  <div class="header">
+    <h1>Anthonys Amazing Amusements</h1>
+  </div>
+  <div class="form">
+    <h2>Login to play games</h2>
 
+    <button onclick="fb_authenticate()">Login with Google</button>
 
-<input type="button" value="old button" onclick="newDoc()">
+    <form onsubmit="return false;">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" value="ant" required />
 
-<script>
-function newDoc() {
-  window.location.assign("https://www.w3schools.com")
-}
-</script>
+      <label for="age">Your Age</label>
+      <input type="number" id="age" name="age" value="100" required />
+
+      <label for="childhoodpetsname">Childhood Pets Name</label>
+      <input type="text" id="childhoodpetsname" name="childhoodpetsname" value="ant" required />
+
+      <label for="mothersmaidenname">Mothers Maiden Name</label>
+      <input type="text" id="mothersmaidenname" name="mothersmaidenname" value="ant" required />
+
+      <label for="modelofyourfirstcar">Model Of Your First Car</label>
+      <input type="text" id="modelofyourfirstcar" name="modelofyourfirstcar" value="ant" required />
+
+      <label for="whatcitywereyoubornin">What City Were You Born In?</label>
+      <input type="text" id="whatcitywereyoubornin" name="whatcitywereyoubornin" value="ant" required />
+
+      <label for="whatstreetdidyougrowupon">What Street Did You Grow Up On</label>
+      <input type="text" id="whatstreetdidyougrowupon" name="whatstreetdidyougrowupon" value="ant" required />
+      <button onclick="fb_write()">Submit and choose game</button>
+  </div>
+  <div class="game1">
+<p>adsgtkjhedbiltgfbszmn,xbvj sdvmcbsxbkuf kawjb kfuasdbfgik aed lihgb fdosg ;k</p>
+  </div>
+  <div class="game2">
+<p>adsgtkjhedbiltgfbszmn,xbvj sdvmcbsxbkuf kawjb kfuasdbfgik aed lihgb fdosg ;k</p>
+  </div>
+</div>
+
 </body>
+</html>
+
