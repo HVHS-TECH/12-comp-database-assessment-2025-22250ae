@@ -9,7 +9,7 @@ body {
   grid-template-areas:
     "header header"
     "form game1"
-    "form leaderboard";
+    "form game2";
   grid-template-columns: 1.5fr 2.5fr;
   gap: 5px;
   background-color: #000000;
@@ -30,12 +30,12 @@ body {
   padding: 50px;
   margin: auto;
 }
-.container > div.game {
-  grid-area: game;
+.container > div.game1 {
+  grid-area: game1;
     border-radius: 12px;
 }
-.container > div.leaderboard {
-  grid-area: leaderboard;
+.container > div.game2 {
+  grid-area: game2;
     border-radius: 12px;
 }
 .clearfix::after {

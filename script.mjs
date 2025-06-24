@@ -47,7 +47,6 @@ function fb_authenticate() {
     .catch((error) => {
         console.log("Authentication unsuccesful");
         console.log(error);
-        const AUTH = getAuth();
     
         }, (error) => {
     
@@ -85,28 +84,10 @@ function fb_write() {
         console.log(error);
     });
 } 
-function fb_readsorted() {
-    const sortKey = "Highscore";
-    const dbReference= query(ref(fb_gamedb, 'Users'), orderByChild("sortKey"), limitToFirst(5));
-    get(dbReference).then((snapshot) => {
-        var fb_data = snapshot.val();
-      if (fb_data != null) {
-         console.log("Successfully read database information:");
-            // Logging database data
-            snapshot.forEach(function (userScoreSnapshot) {
-                console.log(userScoreSnapshot.val()); //DIAG
-        } else {
-           console.log(fb_data)
-           console.log("read succesful")
-        }
-    }).catch((error) => {
-    console.log("reading error")
-    console.log(fb_)
-    });
-}
+
 function fb_game() {
     window.location.assign("https://hvhs-tech.github.io/12comp-javascript-project-2025-22250ae/");
 }
     export { 
-    fb_authenticate, fb_write, fb_game, fb_readsorted
+    fb_authenticate, fb_write, fb_game
  };
