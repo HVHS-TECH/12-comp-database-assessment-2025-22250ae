@@ -10,6 +10,24 @@ var currentUser
 var userId
 var result
 var fb_gamedb;
+function fb_initialise() {
+    console.log('%c fb_initialise(): ', 
+        'color: ' + COL_C + '; background-color: ' + COL_B + ';');
+    console.log("Hello world");
+    const FB_GAMECONFIG = {
+        apiKey: "AIzaSyDHgtIZMIZCJPiRtsGfPR7U7MRHkROTFH4",
+        authDomain: "comp2025-anthony-elliott.firebaseapp.com",
+        databaseURL: "https://comp2025-anthony-elliott-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "comp2025-anthony-elliott",
+        storageBucket: "comp2025-anthony-elliott.firebasestorage.app",
+        messagingSenderId: "547175988310",
+        appId: "1:547175988310:web:2d1b6a9924211d2d600ff7",
+        measurementId: "G-KC1L63N0S9"
+      };
+    const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);
+    fb_gamedb  = getDatabase(FB_GAMEAPP);
+    console.info(fb_gamedb);
+}
 function fb_authenticate() {
     console.log('%c fb_initialise(): ', 
     'color: ' + COL_C + '; background-color: ' + COL_B + ';');
@@ -42,6 +60,7 @@ function fb_authenticate() {
         console.log("Authentication succesful");
         console.log(result);
         console.log(result.user.uid)
+        console.log(result.user.uid.highscore)
     })
 
     .catch((error) => {
@@ -76,7 +95,6 @@ function fb_write() {
         Modelofyourfirstcar: modelofyourfirstcar,
         Whatcitywereyoubornin: whatcitywereyoubornin,
         Whatstreetdidyougrowupon: whatstreetdidyougrowupon
-
     }).then(() => {
         console.log("succesful write")
     }).catch((error) => {
@@ -84,10 +102,37 @@ function fb_write() {
         console.log(error);
     });
 } 
+function fb_authchange(){
+    const AUTH = getAuth();
+    onAuthStateChanged(AUTH, (user) => {
+        if (user) {
+            console.log("user logged in")
+        } else {
+            console.log("user logged out")
+        }
+    }, (error) => {
+        console.log("unsuccesful log in")
+    });
+}
+function fb_read(){
+    const dbReference = ref(FB_GAMEDB, "users/ + userId + highscore");
+    get(dbReference).then((snapshot) => {
+        var fb_data = snapshot.val();
+        if (fb_data != null) {
+            console.log("succesful read")
+            console.log(fb_data)
+        } else {
+            console.log("no record found")
+        }
+    }).catch((error) => {
+        console.log("error with reading")
+        console.log(error)
+    });
+}
 
 function fb_game() {
-    window.location.assign("https://hvhs-tech.github.io/12comp-javascript-project-2025-22250ae/");
+    window.location.assign("https://musical-robot-v6rjxvxx76v7c6xw6-5503.app.github.dev/game1.html");
 }
     export { 
-    fb_authenticate, fb_write, fb_game
+    fb_authenticate, fb_write, fb_game, fb_initialise, fb_read
  };
